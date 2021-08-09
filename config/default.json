@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://devups777:TmangdTmangd1@cluster0.cxsnw.mongodb.net/wallet?retryWrites=true&w=majority",
+    "jwtSecret": "secret"
+  }
