@@ -35,7 +35,7 @@
   margin-bottom: 0;
   font-weight: 900;
   font-size: 34pt;
-  color: #348923;
+  color: #1890ff;
 }
 
 .login-wrapper h2 {
@@ -108,7 +108,7 @@
 }
 
 .login-wrapper .left-side form a, .login-wrapper .right-side form a {
-  color: #348923;
+  color: #1890ff;
   font-size: 8pt;
 }
 
@@ -122,7 +122,7 @@
 }
 
 .login-wrapper .left-side form a:hover, .login-wrapper .right-side form a:hover {
-  color: #1d4c13;
+  color: #0069cb;
 }
 
 .login-wrapper .left-side form button, .login-wrapper .right-side form button {
@@ -146,12 +146,12 @@
 }
 
 .login-wrapper .left-side form button.primary, .login-wrapper .right-side form button.primary {
-  background-color: #348923;
+  background-color: #1890ff;
   color: #fff;
 }
 
 .login-wrapper .left-side form button.primary:hover, .login-wrapper .right-side form button.primary:hover {
-  background-color: #256019;
+  background-color: #0076e4;
 }
 
 .login-wrapper .left-side form button i, .login-wrapper .left-side form button img, .login-wrapper .right-side form button i, .login-wrapper .right-side form button img {
