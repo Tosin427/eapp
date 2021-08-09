@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+$white: #fff;
+$black: #000;
+// $primary-color: #348923;
+$primary-color: #1890ff;
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+.login-wrapper{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    *{
+        z-index: 20;
+    }
+    &::after{
+        background-image: url(../../img/bg1.jpg);
+        background-size: cover;
+        filter: blur(5px);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .login-form-wrapper{
+        width: 90%;
+        max-width: 500px;
+        min-height: 500px;
+        background-color: $white;
+        padding: 2em;
+        border-radius: 20px 20px 0 0;
+
+        p{
+            color: lighten($black,50);
+            font-size: 10pt;
+            line-height: 1.5;
+            margin-left: 50px;
+        }
+
+        label, input{
+            display: block;
+            color: lighten($black, 40);
+        }
+        label{
+            font-weight: 700;
+            margin-top: 30px;
+            text-transform: uppercase;
+            font-size: 10pt;
+            padding-left: .5em;
+        }
+
+        input{
+            border: 0;
+            border-bottom: 1px solid lighten($black, 40);
+            padding: .5em;
+            width: 100%;
+            font-size: 10pt;
+            outline-width: 0 !important;
+            &:focus{
+                font-weight: 700;
+                border-bottom: 1px solid $primary-color;
+                // &~label{
+                //     color: $primary-color;
+                // }
+            }
+        }
+
+        h3{
+            font-size: 24pt;
+            color: $primary-color;
+            font-weight: 700;
+            margin-bottom: 0;
+            a{
+                color: $primary-color;
+                &:hover{
+                    color: darken($primary-color, 10);
+                }
+            }
+        }
+        .forgot-password{
+            margin-top: 30px;
+            display: block;
+            text-align: right;
+            color: $primary-color;
+            font-size: 8pt;
+            &:hover{
+                color: darken($primary-color, 10);
+            }
+        }
+
+        .form-link{
+            color: lighten($black, 30);
+            font-size: 8pt;
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+            &:hover{
+                color: lighten($black, 20);
+            }
+        }
+
+        button{
+            display: block;
+            padding: 1em;
+            margin-top: 20px;
+            text-align: center;
+            outline-width: 0 !important;
+            border: 1px solid darken($white, 15);
+            border-radius: 20px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 200ms linear;
+            &:hover{
+                background-color: darken($white, 10);
+            }
+            &.primary{
+                color: $white;
+                background-color: $primary-color;
+                &:hover{
+                    background-color: darken($primary-color, 10);
+                }
+            }
+            position: relative;
+            img, i{
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                right: 20px;
+                line-height: 25px;
+            }
+            
+
+        }
+    }
+
+}
