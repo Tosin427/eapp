@@ -5,6 +5,7 @@ import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
 import PropTypes from "prop-types";
 import "./Register.css";
+import img from '../../img/login-img1.png'
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
   // const [formData, setFormData] = useState({
@@ -21,6 +22,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     password: '',
     password2: '',
     isSigningUp: false,
+    showPassword: false,
   }
 
   const [state, setState] = useState(initial_state);
@@ -38,26 +40,33 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     }
   };
 
+  const handleTogglePassword = () => {
+    return setState(prevState => ({
+      ...prevState,
+      showPassword: !prevState.showPassword
+    }))
+  }
+
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
   }
 
   return (
-    // <div className="main">
-    //   <div className="contain1">
+    // <div classNameName="main">
+    //   <div classNameName="contain1">
     //     <div>
     //       <Fragment>
     //         <h1
-    //           className="large text-primary"
+    //           classNameName="large text-primary"
     //           style={{ color: "#004100", fontSize: "28px" }}
     //         >
     //           Sign Up
     //         </h1>
-    //         <p className="lead" style={{ color: "#004100", fontSize: "16px" }}>
-    //           <i className="fas fa-user" /> Create Your Account
+    //         <p classNameName="lead" style={{ color: "#004100", fontSize: "16px" }}>
+    //           <i classNameName="fas fa-user" /> Create Your Account
     //         </p>
-    //         <form className="form" onSubmit={onSubmit}>
-    //           <div className="form-group">
+    //         <form classNameName="form" onSubmit={onSubmit}>
+    //           <div classNameName="form-group">
     //             <input
     //               type="text"
     //               placeholder="Name"
@@ -75,7 +84,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     //               }}
     //             />
     //           </div>
-    //           <div className="form-group">
+    //           <div classNameName="form-group">
     //             <input
     //               type="email"
     //               placeholder="Email Address"
@@ -92,12 +101,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     //                 margin: "8px 0",
     //               }}
     //             />
-    //             {/* <small className="form-text">
+    //             {/* <small classNameName="form-text">
     //             This site uses Gravatar so if you want a profile image, use a
     //             Gravatar email
     //           </small> */}
     //           </div>
-    //           <div className="form-group">
+    //           <div classNameName="form-group">
     //             <input
     //               type="password"
     //               placeholder="Password"
@@ -115,7 +124,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     //               }}
     //             />
     //           </div>
-    //           <div className="form-group">
+    //           <div classNameName="form-group">
     //             <input
     //               type="password"
     //               placeholder="Confirm Password"
@@ -135,7 +144,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     //           </div>
     //           <input
     //             type="submit"
-    //             className="btn btn-primary"
+    //             classNameName="btn btn-primary"
     //             value="Register"
     //             style={{
     //               backgroundColor: "#004100",
@@ -149,7 +158,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     //           />
     //         </form>
     //         <p
-    //           className="my-1"
+    //           classNameName="my-1"
     //           style={{ color: "#004100", paddingTop: "10px" }}
     //         >
     //           Already have an account? <Link to="/login">Sign In</Link>
@@ -160,46 +169,63 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     // </div>
 
     <div className="login-wrapper">
-        <div className="login-form-wrapper">
-            <h3><Link to='/'> <i className='fa fa-home'></i> </Link>Create account!</h3>
-            <p>Join the thousands sending and recieving funds with e-blaze wallet</p>
+        <div className="left-side">
+            <h1>Welcome back,</h1>
+            <h2>Kindly fill in details to log in</h2>
+            <img src={img} alt="Banner" />
+        </div>
+        <div className="right-side">
             <form onSubmit={onSubmit}>
+                <h1 className="title">Create Account!</h1>
                 <label htmlFor="name">Name</label>
-                <input 
-                  placeholder="John Doe" 
-                  type="text" 
-                  onChange={onChange}
-                  disabled={state.isSigningUp}
-                  name='name' 
-                  value={state.name} />
+                <div className="input-group">
+                    <input 
+                      placeholder="John Doe"
+                      name='name'
+                      value={state.name} 
+                      onChange={onChange}
+                      type="text" />
+                    <i className="fa fa-user"></i>
+                </div>
                 <label htmlFor="email">Email</label>
-                <input 
-                  type="email"
-                  name='email'  
-                  disabled={state.isSigningUp}
-                  value={state.email}
-                  onChange={onChange}
-                  placeholder="mail@example.com"/>
-                  <label htmlFor="email">Password</label>
-                <input 
-                  type="password"
-                  name='password'  
-                  disabled={state.isSigningUp}
-                  value={state.password}
-                  onChange={onChange}
-                  placeholder="somesecurepassword"/>
-                  <label htmlFor="email">Password Confirmation</label>
-                <input 
-                  type="password"
-                  name='password2'  
-                  disabled={state.isSigningUp}
-                  value={state.password2}
-                  onChange={onChange}
-                  placeholder="reenter password"/>
-                <button 
-                  disabled={state.isSigningUp}
-                  className="login primary">{!state.isSigningUp ? "Sign up" : "Please wait"} <i className="fa fa-chevron-right"></i></button>
-                <Link to="/login" className="form-link">Sign-in here <i className="fa fa-arrow-right"></i></Link>
+                <div className="input-group">
+                    <input 
+                      placeholder="someemail@example.com"
+                      name='email'
+                      value={state.email} 
+                      onChange={onChange}
+                      type="text" />
+                    <i className="fa fa-envelope"></i>
+                </div>
+                <label htmlFor="password">Password</label>
+                <div className="input-group">
+                    <input 
+                      type={state.showPassword ? 'text' : 'password'}
+                      name='password'
+                      value={state.password}
+                      onChange={onChange}  
+                      placeholder="somepassword"/>
+                    <i
+                      onClick={handleTogglePassword} 
+                      
+                      className={`fa ${state.showPassword ? 'fa-eye-slash' : 'fa-eye'}`} ></i>
+                    
+                </div>
+                <label htmlFor="password">Password Confirmation</label>
+                <div className="input-group">
+                    <input 
+                      type={state.showPassword ? 'text' : 'password'}
+                      name='password2'
+                      value={state.password2}
+                      onChange={onChange}  
+                      placeholder="somepassword"/>
+                    <i
+                      onClick={handleTogglePassword} 
+                      className={`fa ${state.showPassword ? 'fa-eye-slash' : 'fa-eye'}`} ></i>
+                    
+                </div>
+                <button type='submit' className="login primary">Register <i className="fa fa-chevron-right"></i></button>
+                <p>Already registered? <Link to="/login" className="form-link">Login</Link></p>
             </form>
         </div>
     </div>
