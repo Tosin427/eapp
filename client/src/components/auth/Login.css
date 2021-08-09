@@ -32,6 +32,7 @@
 
 .login-wrapper h1 {
   margin-top: 2em;
+  margin-bottom: 0;
   font-weight: 900;
   font-size: 34pt;
   color: #348923;
