@@ -42,6 +42,7 @@
   color: gray;
   font-weight: 300;
   font-size: 14pt;
+  line-height: 16px;
 }
 
 .login-wrapper .left-side, .login-wrapper .right-side {

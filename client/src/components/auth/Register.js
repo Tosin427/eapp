@@ -170,8 +170,9 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
     <div className="login-wrapper">
         <div className="left-side">
-            <h1>Welcome back,</h1>
-            <h2>Kindly fill in details to log in</h2>
+            <h1>Create Account,</h1>
+            <h2>Join thousands sending and recieving crypto </h2>
+            <h2>with e-blaze wallet </h2>
             <img src={img} alt="Banner" />
         </div>
         <div className="right-side">
