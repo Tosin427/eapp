@@ -13,154 +13,178 @@
   position: fixed;
   width: 100%;
   height: 100%;
+  background: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0 5em 0 5em;
 }
 
-.login-wrapper * {
-  z-index: 20;
+.login-wrapper .right-side {
+  padding-top: 10em;
 }
 
-.login-wrapper::after {
-  background-image: url(../../img/bg1.jpg);
-  background-size: cover;
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+.login-wrapper .right-side form {
+  margin-top: 10em;
 }
 
-.login-wrapper .login-form-wrapper {
-  width: 90%;
-  max-width: 500px;
-  min-height: 500px;
-  background-color: #fff;
-  padding: 2em;
-  border-radius: 20px 20px 0 0;
-}
-
-.login-wrapper .login-form-wrapper p {
-  color: gray;
-  font-size: 10pt;
-  line-height: 1.5;
-  margin-left: 50px;
-}
-
-.login-wrapper .login-form-wrapper label, .login-wrapper .login-form-wrapper input {
-  display: block;
-  color: #666666;
-}
-
-.login-wrapper .login-form-wrapper label {
-  font-weight: 700;
-  margin-top: 30px;
-  text-transform: uppercase;
-  font-size: 10pt;
-  padding-left: .5em;
-}
-
-.login-wrapper .login-form-wrapper input {
-  border: 0;
-  border-bottom: 1px solid #666666;
-  padding: .5em;
-  width: 100%;
-  font-size: 10pt;
-  outline-width: 0 !important;
-}
-
-.login-wrapper .login-form-wrapper input:focus {
-  font-weight: 700;
-  border-bottom: 1px solid #1890ff;
-}
-
-.login-wrapper .login-form-wrapper h3 {
-  font-size: 24pt;
-  color: #1890ff;
-  font-weight: 700;
+.login-wrapper h1 {
+  margin-top: 2em;
   margin-bottom: 0;
-}
-
-.login-wrapper .login-form-wrapper h3 a {
+  font-weight: 900;
+  font-size: 34pt;
   color: #1890ff;
 }
 
-.login-wrapper .login-form-wrapper h3 a:hover {
-  color: #0076e4;
+.login-wrapper h2 {
+  color: gray;
+  font-weight: 300;
+  font-size: 14pt;
+  line-height: 16px;
 }
 
-.login-wrapper .login-form-wrapper .forgot-password {
-  margin-top: 30px;
-  display: block;
-  text-align: right;
-  color: #1890ff;
-  font-size: 8pt;
+.login-wrapper .left-side, .login-wrapper .right-side {
+  width: 40%;
+  padding: 2em;
 }
 
-.login-wrapper .login-form-wrapper .forgot-password:hover {
-  color: #0076e4;
-}
-
-.login-wrapper .login-form-wrapper .form-link {
-  color: #4d4d4d;
-  font-size: 8pt;
-  margin-top: 20px;
-  display: block;
-  text-align: center;
-}
-
-.login-wrapper .login-form-wrapper .form-link:hover {
-  color: #333333;
-}
-
-.login-wrapper .login-form-wrapper button {
-  display: block;
-  padding: 1em;
-  margin-top: 20px;
-  text-align: center;
-  outline-width: 0 !important;
-  border: 1px solid #d9d9d9;
-  border-radius: 20px;
+.login-wrapper .left-side img, .login-wrapper .right-side img {
   width: 100%;
+}
+
+.login-wrapper .left-side label, .login-wrapper .right-side label {
+  margin-top: 25px;
+  font-size: 10pt;
+}
+
+.login-wrapper .left-side input, .login-wrapper .left-side label, .login-wrapper .right-side input, .login-wrapper .right-side label {
+  color: #666666;
+  display: block;
+  width: 100%;
+}
+
+.login-wrapper .left-side form, .login-wrapper .right-side form {
+  max-width: 300px;
+}
+
+.login-wrapper .left-side form .input-group, .login-wrapper .right-side form .input-group {
+  width: 100%;
+  position: relative;
+  height: 35px;
+  margin: 10px 0;
+  label-display: block;
+}
+
+.login-wrapper .left-side form .input-group input, .login-wrapper .right-side form .input-group input {
+  background: #e6e6e6;
+  border: none;
+  outline-width: 0 !important;
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  padding: 0 10px;
+}
+
+.login-wrapper .left-side form .input-group input:focus, .login-wrapper .right-side form .input-group input:focus {
+  font-weight: 700;
+}
+
+.login-wrapper .left-side form .input-group i, .login-wrapper .right-side form .input-group i {
+  position: absolute;
+  right: 0px;
+  line-height: 40px;
+  top: -5px;
+  width: 50px;
+  text-align: center;
+  background-color: #d9d9d9;
   cursor: pointer;
+}
+
+.login-wrapper .left-side form p, .login-wrapper .right-side form p {
+  color: #666666;
+  font-size: 8pt;
+  text-align: center;
+}
+
+.login-wrapper .left-side form a, .login-wrapper .right-side form a {
+  color: #1890ff;
+  font-size: 8pt;
+}
+
+.login-wrapper .left-side form a.center, .login-wrapper .right-side form a.center {
+  text-align: center;
+}
+
+.login-wrapper .left-side form a.right, .login-wrapper .right-side form a.right {
+  text-align: right;
+  display: block;
+}
+
+.login-wrapper .left-side form a:hover, .login-wrapper .right-side form a:hover {
+  color: #0069cb;
+}
+
+.login-wrapper .left-side form button, .login-wrapper .right-side form button {
+  padding: 1em;
+  text-align: center;
+  border: 0;
+  outline-width: 0 !important;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+  font-weight: 700;
+  cursor: pointer;
+  color: #333333;
   -webkit-transition: background-color 200ms linear;
   transition: background-color 200ms linear;
-  position: relative;
+  background-color: #f2f2f2;
 }
 
-.login-wrapper .login-form-wrapper button:hover {
+.login-wrapper .left-side form button:hover, .login-wrapper .right-side form button:hover {
   background-color: #e6e6e6;
 }
 
-.login-wrapper .login-form-wrapper button.primary {
-  color: #fff;
+.login-wrapper .left-side form button.primary, .login-wrapper .right-side form button.primary {
   background-color: #1890ff;
+  color: #fff;
 }
 
-.login-wrapper .login-form-wrapper button.primary:hover {
+.login-wrapper .left-side form button.primary:hover, .login-wrapper .right-side form button.primary:hover {
   background-color: #0076e4;
 }
 
-.login-wrapper .login-form-wrapper button img, .login-wrapper .login-form-wrapper button i {
+.login-wrapper .left-side form button i, .login-wrapper .left-side form button img, .login-wrapper .right-side form button i, .login-wrapper .right-side form button img {
   width: 20px;
   height: 20px;
   position: absolute;
   right: 20px;
-  line-height: 25px;
+  top: 10px;
+  line-height: 23px;
 }
-/*# sourceMappingURL=Login.css.map */
+
+.title {
+  display: none;
+}
+
+@media screen and (max-width: 880px) {
+  .login-wrapper {
+    padding: 0;
+  }
+  .login-wrapper .left-side {
+    display: none;
+  }
+  .login-wrapper .right-side {
+    width: 90%;
+    padding-top: 0em;
+  }
+  .login-wrapper .right-side .title {
+    display: block;
+    font-size: 20pt;
+  }
+  .login-wrapper .right-side form {
+    margin: 0 auto;
+  }
+}
+/*# sourceMappingURL=login2.css.map */

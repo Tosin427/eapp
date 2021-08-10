@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 $white: #fff;
 $black: #000;
-// $primary-color: #348923;
-$primary-color: #1890ff;
+$primary-color: #348923;
 
 *{
     padding: 0;
@@ -12,139 +11,164 @@ $primary-color: #1890ff;
     box-sizing: border-box;
     font-family: 'Roboto';
 }
+
 .login-wrapper{
     position: fixed;
     width: 100%;
     height: 100%;
+    background: $white;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    *{
-        z-index: 20;
-    }
-    &::after{
-        background-image: url(../../img/bg1.jpg);
-        background-size: cover;
-        filter: blur(5px);
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    }
-
-    .login-form-wrapper{
-        width: 90%;
-        max-width: 500px;
-        min-height: 500px;
-        background-color: $white;
-        padding: 2em;
-        border-radius: 20px 20px 0 0;
-
-        p{
-            color: lighten($black,50);
-            font-size: 10pt;
-            line-height: 1.5;
-            margin-left: 50px;
+    justify-content: space-around;
+    padding: 0 5em 0 5em;
+    .right-side{
+        padding-top: 10em;
+        form{
+            margin-top: 10em;
         }
-
-        label, input{
-            display: block;
-            color: lighten($black, 40);
+    }
+    h1{
+        margin-top: 2em;
+        font-weight: 900;
+        font-size: 34pt;
+        color: $primary-color;
+    }
+    h2{
+        color: lighten($black, 50);
+        font-weight: 300;
+        font-size: 14pt;
+    }
+    .left-side, .right-side{
+        width: 40%;
+        padding: 2em;
+        img{
+            width: 100%;;
         }
         label{
-            font-weight: 700;
-            margin-top: 30px;
-            text-transform: uppercase;
+            margin-top: 25px;
             font-size: 10pt;
-            padding-left: .5em;
-        }
 
-        input{
-            border: 0;
-            border-bottom: 1px solid lighten($black, 40);
-            padding: .5em;
+        }
+        input,label{
+            color: lighten($black, 40);
+            display: block;
             width: 100%;
-            font-size: 10pt;
-            outline-width: 0 !important;
-            &:focus{
-                font-weight: 700;
-                border-bottom: 1px solid $primary-color;
-                // &~label{
-                //     color: $primary-color;
-                // }
-            }
         }
-
-        h3{
-            font-size: 24pt;
-            color: $primary-color;
-            font-weight: 700;
-            margin-bottom: 0;
+        form{
+            max-width: 300px;
+            .input-group{
+                width: 100%;
+                position: relative;
+                // border-bottom: 1px solid $primary-color;
+                height: 40px;
+                
+                margin: 10px 0;
+                label: {
+                    display: block;
+                    
+                }
+                input{
+                    background: darken($white, 10);
+                    border: none;
+                    outline-width: 0 !important;
+                    position: absolute;
+                    bottom: 0;
+                    height: 40px;
+                    padding: 0 10px;
+                    &:focus{
+                        font-weight: 700;
+                    }
+                    
+                }
+                i{
+                    position: absolute;
+                    right: 0px;
+                    line-height: 40px;
+                    width: 50px;
+                    // height: 50px;
+                    text-align: center;
+                    background-color: darken($white, 15);
+                    cursor: pointer;
+                }
+            }
+            p{
+                color: lighten($black, 40);
+                font-size: 8pt; 
+                text-align: center;
+            }
             a{
                 color: $primary-color;
+                
+                font-size: 8pt;
+                // display: block;
+                &.center{
+                    text-align: center;
+                }
+                &.right{
+                    text-align: right;
+                    display: block;
+                }
                 &:hover{
-                    color: darken($primary-color, 10);
+                    color: darken($primary-color, 15);
                 }
             }
-        }
-        .forgot-password{
-            margin-top: 30px;
-            display: block;
-            text-align: right;
-            color: $primary-color;
-            font-size: 8pt;
-            &:hover{
-                color: darken($primary-color, 10);
-            }
-        }
 
-        .form-link{
-            color: lighten($black, 30);
-            font-size: 8pt;
-            margin-top: 20px;
-            display: block;
-            text-align: center;
-            &:hover{
+            button{
+                padding: 1em;
+                text-align: center;
+                border: 0;
+                outline-width: 0 !important;
+                width: 100%;
+                margin: 10px 0;
+                position: relative;
+                font-weight: 700;
+                cursor: pointer;
                 color: lighten($black, 20);
-            }
-        }
-
-        button{
-            display: block;
-            padding: 1em;
-            margin-top: 20px;
-            text-align: center;
-            outline-width: 0 !important;
-            border: 1px solid darken($white, 15);
-            border-radius: 20px;
-            width: 100%;
-            cursor: pointer;
-            transition: background-color 200ms linear;
-            &:hover{
-                background-color: darken($white, 10);
-            }
-            &.primary{
-                color: $white;
-                background-color: $primary-color;
+                transition: background-color 200ms linear;
+                background-color: darken($white, 5);
                 &:hover{
-                    background-color: darken($primary-color, 10);
+                    background-color: darken($white, 10);
+                }
+                &.primary{
+                    background-color: $primary-color;
+                    color: $white;
+                    &:hover{
+                        background-color: darken($primary-color, 10);
+                    }
+                }
+
+                i, img{
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    right: 20px;
+                    top:10px;
+                    line-height: 23px;
                 }
             }
-            position: relative;
-            img, i{
-                width: 20px;
-                height: 20px;
-                position: absolute;
-                right: 20px;
-                line-height: 25px;
-            }
-            
+        }
+        
+    }
+}
 
+.title{
+    display: none;
+}
+
+@media screen and (max-width: 880px) {
+    .login-wrapper{
+        padding: 0;
+        .left-side{
+            display: none;
+        }
+        .right-side{
+            width: 90%;
+            .title{
+                display: block;
+                font-size: 20pt;
+            }
+            form{
+                margin: 0 auto;
+            }
         }
     }
-
 }
