@@ -25,6 +25,7 @@ import Wallet from "../contents/Wallet";
 import NewDashboard from "./NewDashboard";
 import Chat from "../Chat";
 import Transactions from "../contents/Transactions";
+import Layout2 from '../layout2/layout2'
 
 const { Header, Content, Footer, Sider } = Layout;
 // const { SubMenu } = Menu;
@@ -45,8 +46,19 @@ const Dashboard = ({
   // const handleCollapsed = () => {
   //   setIsCollapsed(true);
   // };
+  return( <Router>
+    <Layout2>
+      <Switch>
+        <Route path="/transactions" component={Transactions}></Route>
+        <Route path="/chat" component={Chat}></Route>
+        <Route path="/wallet" component={Wallet} />
+        <Route pathe="/newdashboard" component={NewDashboard} />
+      </Switch>
+    </Layout2>
+  </Router>)
 
   return (
+
     <Router>
       <Layout style={{ minHeight: "100vh" }}>
         <Sider collapsible>

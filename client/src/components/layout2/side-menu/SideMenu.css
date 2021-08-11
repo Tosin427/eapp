@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;800;900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,900&display=swap");
+.side-menu {
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  width: 200px;
+  max-width: 200px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#072c4e), to(#03121f));
+  background-image: linear-gradient(to bottom, #072c4e, #03121f);
+  z-index: 1000;
+  -webkit-transition: max-width 200ms, left 200ms, linear;
+  transition: max-width 200ms, left 200ms, linear;
+}
+
+.side-menu .nav-toggle {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: #be0606;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  font-size: 16px;
+  -webkit-transition: -webkit-transform 200ms linear;
+  transition: -webkit-transform 200ms linear;
+  transition: transform 200ms linear;
+  transition: transform 200ms linear, -webkit-transform 200ms linear;
+}
+
+.side-menu.collapsed {
+  max-width: 80px;
+}
+
+.side-menu.collapsed .nav-toggle i {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.side-menu.collapsed .logo-wrapper img {
+  width: 30px;
+}
+
+.side-menu.collapsed .menu-list .menu-item {
+  text-align: center;
+  padding: 0px;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: block;
+}
+
+.side-menu.collapsed .menu-list .menu-item.active {
+  background-color: #041c32;
+  border: 0;
+}
+
+.side-menu.collapsed .menu-list .menu-item a {
+  display: none;
+}
+
+.side-menu.collapsed .menu-list .menu-item i {
+  line-height: 50px;
+  font-size: 14pt;
+  margin-right: 0;
+}
+
+.side-menu .logo-wrapper {
+  width: 100%;
+  text-align: center;
+  padding: 1em 0;
+}
+
+.side-menu .logo-wrapper img {
+  width: 50px;
+}
+
+.side-menu .menu-list {
+  width: 100%;
+  padding-top: 40px;
+}
+
+.side-menu .menu-list .menu-item {
+  width: 100%;
+  padding: 10px 20px;
+  cursor: pointer !important;
+}
+
+.side-menu .menu-list .menu-item:hover a, .side-menu .menu-list .menu-item:hover i {
+  color: #fff !important;
+  font-weight: 300;
+}
+
+.side-menu .menu-list .menu-item.active {
+  background-color: #041729;
+  border-right: 2px solid #be0606;
+}
+
+.side-menu .menu-list .menu-item.active a, .side-menu .menu-list .menu-item.active i {
+  color: #fff;
+  font-weight: 700;
+}
+
+.side-menu .menu-list .menu-item a, .side-menu .menu-list .menu-item i {
+  font-size: 10pt;
+}
+
+.side-menu .menu-list .menu-item a {
+  color: #b3b3b3;
+  font-weight: 300;
+}
+
+.side-menu .menu-list .menu-item i {
+  margin-right: 10px;
+  color: #fff;
+}
+
+@media screen and (max-width: 720px) {
+  .side-menu.collapsed {
+    left: -100vh;
+  }
+}
+/*# sourceMappingURL=SideMenu.css.map */

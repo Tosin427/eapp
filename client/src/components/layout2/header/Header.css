@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;800;900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,900&display=swap");
+.header {
+  padding: 1em 3em;
+  color: red;
+  text-align: right;
+}
+
+.header a {
+  color: #072c4e;
+  font-size: 10pt;
+}
+
+.header .name-abbv {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: 900;
+  font-size: 10pt;
+  margin-right: 10px;
+  background-color: #072c4e;
+  line-height: 30px;
+}
+
+.header .mobile-nav-toggle {
+  display: none;
+}
+/*# sourceMappingURL=Header.css.map */

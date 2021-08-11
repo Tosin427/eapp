@@ -54,7 +54,6 @@ const Transactions = () => {
     },
   ];
 
-  const data = [];
 
   const [getData, setGetData] = useState([]);
 
@@ -64,32 +63,17 @@ const Transactions = () => {
         // "https://blockchain.info/rawaddr/1HqUb1yWNgdbuvpbijz6FxRXzkGdQnmuZj"
         `https://api.blockcypher.com/v1/btc/main/addrs/1HqUb1yWNgdbuvpbijz6FxRXzkGdQnmuZj`
       )
-      .then((response) => setGetData(response.data.trefs))
+      .then((response) => setGetData(response.data.txrefs))
       .catch((err) => {
         console.log(err);
       });
   }, []);
 
-  // console.log(getData.data.txrefs[0]);
-
-  for (let i = 0; i < 5; i++) {
-    data.push({
-      key: i,
-      date: getData[i].value,
-      // sent: getData[i].value / 100000000,
-      // details: getData[1].tx_hash,
-      // age: 32,
-      // address: `London Park no. ${i}`,
-    });
-  }
-
-  buildData(getData);
-
   return (
     <div>
       <Table
         columns={columns}
-        dataSource={data}
+        dataSource={getData.map((data, index) => ({key: index, date: data.value}))}
         scroll={{ x: 1500 }}
         summary={(pageData) => (
           <Table.Summary fixed>
